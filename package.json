@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "workspaces": [
+    "be",
+    "fe"
+  ],
+  "scripts": {
+    "api": "cd be && yarn start",
+    "test": "cd be && yarn test",
+    "web": "cd fe && cp ../.env .env && yarn start",
+    "db:start": "docker-compose up -d database",
+    "db:stop": "docker-compose stop database"
+  }
+}

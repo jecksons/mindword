@@ -1,0 +1,203 @@
+:root{	
+	--prim: #ee6c4d; 	/* Main Primary color */
+	--prim-2: #ffb29f;
+	--prim-3:#ff8f75;
+	--prim-4:#dc4724;
+	--prim-5: #ab2e11;
+    --prim-6: #FAD6CC;
+    --prim-6-25: #FAD6CC64;
+	--sec-1-1: #7e7b74;
+	--sec-1-2: #FFC027;
+	--sec-1-3:#D29400;
+	--sec-2-1: #FF2800;
+	--sec-2-2: #FF4927;
+	--sec-2-3:#D22100;
+	--background: #FAFAFA;
+	--background-hover: #e0e0e0;
+	--surface: #fff;	
+	--surface-hover: #f0f0f0;	
+	--prim-text: #8f4d4d;
+	--prim-text-hover: #707070;
+	--prim-disabled: #bababa;
+	--success-green: #06d6a0;
+	--grey-1: #707070;
+	--grey-2: #F1F1F1;
+    --black-1: #303030;
+    --black-2: #333333;
+    --black-3: #505050;
+	--prim-4-text:#FFF;
+	--prim-opacity-14: rgba(0, 187, 249, 0.14);
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@font-face {
+	font-family: 'ubunturegular';
+	src: url('./fonts/ubuntu-regular-webfont.woff2') format('woff2'),
+		  url('./fonts/ubuntu-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'ubunturegular';
+	src: url('./fonts/ubuntu-light-webfont.woff2') format('woff2'),
+		  url('./fonts/ubuntu-light-webfont.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ubunturegular';
+	src: url('./fonts/ubuntu-bold-webfont.woff2') format('woff2'),
+		  url('./fonts/ubuntu-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+
+}
+ 
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input,
+textarea,
+button,
+h1, h2, h3, h4, h5, h6,
+label,
+strong,
+div,
+a{
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+	font-size: 1rem;
+}
+
+h1{
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+h2{
+	font-size: 1rem;
+	color: #707070;
+	font-weight: bold;
+}
+
+h3{
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+input{
+	border: 0;
+	border-bottom: 1px solid #ebebeb;
+	padding: 0.5rem;	
+	outline: none;
+	border-radius: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
+}
+
+input:hover{
+	border-bottom: 1px solid #707070;
+}
+
+input:focus{
+	border-bottom: 1px solid var(--prim-3);	    
+}
+
+
+textarea{
+	border: 1px solid #e0e0e0;
+	padding: 0.5rem;	
+	outline: none;
+    resize: vertical;
+    line-height: 1rem;
+	border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+textarea:hover{
+	border: 1px solid #707070;
+}
+
+textarea:focus{
+	border: 1px solid var(--prim-3);	    
+}
+
+
+
+p{
+	line-height: 1.5rem;
+}
+
+::-webkit-scrollbar {
+	width: 8px;	
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+	background: #e0e0e0; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #b0b0b0; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #909090; 
+}

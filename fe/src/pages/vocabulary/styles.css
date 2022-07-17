@@ -1,0 +1,59 @@
+div.vocabulary-parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+button.btn-header-tab{
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+    margin: 2rem 2rem 1rem 0;
+    border-bottom: 2px solid transparent;
+    color: #333333;    
+}
+
+button.btn-header-tab.selected{
+    border-bottom: 2px solid var(--prim);
+}
+
+button.btn-header-tab:hover{
+    color: #707070;
+}
+
+header.vocabulary-top{
+    min-width: 42rem;
+    width: 42rem;
+    position: fixed;    
+    padding: 3rem 0 0;
+    background-color: var(--surface);
+}
+
+ul.vocabulary-items{
+    max-width: 42rem;
+    width: 42rem;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+div.detail-vocabulary{
+    padding: 1rem;
+    border: 1px solid var(--prim-6);
+    margin-bottom: 1rem;
+    background: linear-gradient(#FAD6CC1E, #FAD6CC90);    
+}
+
+ul.vocabulary-example li:not(:last-child){
+    margin-bottom: 0.5rem;    
+}
+
+ul.vocabulary-example{
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-top: 0.5rem;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}

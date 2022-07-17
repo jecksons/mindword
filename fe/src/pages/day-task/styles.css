@@ -1,0 +1,222 @@
+div.day-task{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5rem;
+    justify-content: center;
+}
+
+h2.day-title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4b4b4b;
+    margin-bottom: 1rem;
+}
+
+section.calendar-parent{
+    max-width: 20rem;
+}
+
+section.calendar-parent button{
+    border: 0;
+    outline: none;
+    padding: 0.5rem;
+    background-color: #fff;
+    color: #333333;
+    cursor: pointer;
+}
+
+section.calendar-parent button.react-calendar__month-view__days__day--weekend{    
+    color: rgb(111, 111, 255);
+}
+
+section.calendar-parent button.react-calendar__month-view__days__day--neighboringMonth{    
+    color: #b0b0b0;
+}
+
+section.calendar-parent button.react-calendar__tile--rangeStart,
+section.calendar-parent button.react-calendar__tile--hasActive.react-calendar__year-view__months__month{    
+    color: #fff;
+    background-color: var(--prim);
+}
+
+
+section.calendar-parent button.react-calendar__tile--now{    
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+section.calendar-parent div.react-calendar__navigation{    
+    display: flex;    
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+section.calendar-parent div.react-calendar__month-view__weekdays__weekday{
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 0.5rem 0;
+    text-decoration: none;    
+}
+
+section.calendar-parent div.react-calendar__month-view__weekdays__weekday > abbr{
+    text-decoration: none;    
+    font-size: 0.75rem;
+}
+
+
+section.calendar-parent button:hover{    
+    background-color: #dedede;
+}
+
+main.parent-expressions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+main.parent-expressions > header{
+    min-width: 32rem;
+}
+
+div.no-expression{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;    
+}
+
+div.no-expression > label{
+    font-weight: 300;
+    color: #909090;
+    font-size: 1.12rem;
+    letter-spacing: 0.1rem;
+}
+
+div.new-expression{
+    min-width: 32rem;
+}
+
+
+div.score-progress-parent{
+    width: 240px;
+    background-color: #C0C0C0;
+    border-radius: 20px;
+    height: 12px;
+    margin: 0.5rem 0;    
+    display: flex;
+}
+
+div.score-progress{
+    position: relative;
+    height: 100%;
+    width: 100%;    
+    background-color: transparent;
+    box-shadow: inset 0 -2px 2px 2px rgba(255, 255, 255, 0.25);
+}
+
+div.score-progress::before{
+    position: absolute;
+    content: " ";
+    width: var(--progress-complete);
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: var(--complete-border-radius);
+    background-color: #17C3B2;
+    
+}
+
+div.score-progress::after{
+    position: absolute;
+    content: " ";
+    width: var(--pending-items);
+    left: var(--progress-complete);
+    top: 0;
+    height: 100%;
+    border-radius: var(--pending-border-radius);
+    background-color: var(--prim-2);           
+}
+
+
+div.change-goal-menu > input{
+    max-width: 4rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+aside.day-task-left{
+    position: fixed;
+    right: calc(50% +  20rem);    
+    max-width: 15rem;
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+
+aside.day-task-right{
+    position: fixed;
+    left: calc(50% + 20rem);    
+    margin-top: 1.5rem;
+}
+
+
+section.user-annotations{
+    display: flex;
+    flex-direction: column;    
+    margin: 1rem 0 0.5rem;
+    width: 100%;
+    background-color: var(--prim-6-25);    
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 10px 10px;
+    border: 1px solid var(--prim-6);
+}
+
+section.user-annotations > header{
+    background-color: var(--prim-2);    
+    padding: 0.5rem 1rem;
+}
+
+
+section.user-annotations  h3{
+    font-weight: 300;
+    font-size: 0.875rem;
+    letter-spacing: 0.15rem;
+    color: #333333;
+}
+
+section.user-annotations textarea{
+    background-color: rgba(255, 255, 255, 0);
+    margin: 1rem 1rem 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    min-height: 12rem;
+    color: #333333;
+    border: 0;
+    padding: 0;
+}
+
+
+section.user-annotations textarea::-webkit-scrollbar-track {
+	background: var(--prim-6-25); 
+}
+
+
+section.user-annotations textarea::-webkit-scrollbar-thumb {
+	border-radius: 20px;
+    background-color: var(--prim-2);
+}
+
+section.user-annotations textarea::-webkit-scrollbar-corner {
+    color: transparent;
+}
+
+
+section.user-annotations textarea:focus,
+section.user-annotations textarea:hover{
+    border: 0;
+}
+
+
