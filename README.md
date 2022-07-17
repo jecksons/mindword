@@ -1,4 +1,4 @@
-#Mindword
+# Mindword
 
 This project aim to provide a tool to adquire vocabulary in another language.
 
