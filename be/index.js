@@ -31,6 +31,7 @@ function handleRequestDB(req, res, callback) {
 require('./routes/auth-routes')(app, handleRequestDB);
 require('./routes/expression-routes')(app, handleRequestDB);
 require('./routes/draft-routes')(app, handleRequestDB);
+require('./routes/translate-routes')(app);
 
 
 app.listen(config.web.port, function () {

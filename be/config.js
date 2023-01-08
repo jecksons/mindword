@@ -4,17 +4,24 @@ const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_HOST = process.env.DB_HOST;
 const DB_NAME = process.env.DB_NAME;
+const GOOGLE_TRANSLATE_AUTH_FILE = process.env.GOOGLE_TRANSLATE_AUTH_FILE;
+const GOOGLE_PROJECT_ID = 'mindword';
+const GOOGLE_TRANSLATE_PARENT = 'projects/mindword';
+
 
 const config = {
-    connectionLimit: 100,
-    debug: false,
-    port: DB_PORT,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    database: DB_NAME,
-    env: env,
-    web: {},
-    host: DB_HOST
+   connectionLimit: 100,
+   debug: false,
+   port: DB_PORT,
+   user: DB_USER,
+   password: DB_PASSWORD,
+   database: DB_NAME,
+   env: env,
+   web: {},
+   host: DB_HOST,
+   googleTranslateAuthFile: GOOGLE_TRANSLATE_AUTH_FILE,
+   googleProjectId: GOOGLE_PROJECT_ID,
+   googleTranslateParent: GOOGLE_TRANSLATE_PARENT
 };
 
 
