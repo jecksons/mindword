@@ -20,8 +20,6 @@ const LS_LOADING = 3;
 
 
 
-
-
 function reducerExprItems(state, action) {
    switch (action.type) {
       case 'set': {
