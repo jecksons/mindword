@@ -14,42 +14,41 @@ import AuthModal from './pages/auth-modal';
 
 function App() {
 
-    const [localUser, setLocalUser, reloadLocalUser] = useLocalStorage('user', null);
-    const [userInfo, setUserInfo] = useState(localUser);
-    const updaterUserInfo = useCallback((newValue) => {
-        setLocalUser(newValue);
-        setUserInfo(newValue);
-    }, [setLocalUser, setUserInfo]);
-    const reloadUserInfo = useCallback(() => {
-        const refreshUser = reloadLocalUser();
-        setUserInfo(refreshUser);
-    }, [reloadLocalUser]);
-    const userValue = useMemo(() => ({ userInfo, setUserInfo: updaterUserInfo, reloadUserInfo }), [userInfo, updaterUserInfo, reloadUserInfo]);
-    const [isLogged, setIsLogged] = useState(false);
+   const [localUser, setLocalUser, reloadLocalUser] = useLocalStorage('user', null);
+   const [userInfo, setUserInfo] = useState(localUser);
+   const updaterUserInfo = useCallback((newValue) => {
+      setLocalUser(newValue);
+      setUserInfo(newValue);
+   }, [setLocalUser, setUserInfo]);
+   const reloadUserInfo = useCallback(() => {
+      const refreshUser = reloadLocalUser();
+      setUserInfo(refreshUser);
+   }, [reloadLocalUser]);
+   const userValue = useMemo(() => ({ userInfo, setUserInfo: updaterUserInfo, reloadUserInfo }), [userInfo, updaterUserInfo, reloadUserInfo]);
+   const [isLogged, setIsLogged] = useState(false);
 
-    return (
-        <div className="App">
-
-            <ErrorBoundary>
-                <UserContext.Provider value={userValue} >
-                    <BrowserRouter>
-                        <ScrollToTop>
-                            <Routes>
-                                {isLogged ?
-                                    <>
-                                        <Route path="/" element={<DayTask />} />
-                                        <Route exact path="/vocabulary" element={<Vocabulary />} />
-                                        <Route path="*" element={<DayTask />} />
-                                    </> :
-                                    <Route path="*" element={<AuthModal showAuth={!isLogged} onAuth={() => setIsLogged(true)} />} />
-                                }
-                            </Routes>
-                        </ScrollToTop>
-                    </BrowserRouter>
-                </UserContext.Provider>
-            </ErrorBoundary>
-        </div>
-    );
+   return (
+      <div className="App">
+         <ErrorBoundary>
+            <UserContext.Provider value={userValue} >
+               <BrowserRouter>
+                  <ScrollToTop>
+                     <Routes>
+                        {isLogged ?
+                           <>
+                              <Route path="/" element={<DayTask />} />
+                              <Route exact path="/vocabulary" element={<Vocabulary />} />
+                              <Route path="*" element={<DayTask />} />
+                           </> :
+                           <Route path="*" element={<AuthModal showAuth={!isLogged} onAuth={() => setIsLogged(true)} />} />
+                        }
+                     </Routes>
+                  </ScrollToTop>
+               </BrowserRouter>
+            </UserContext.Provider>
+         </ErrorBoundary>
+      </div>
+   );
 }
 
 export default App;
