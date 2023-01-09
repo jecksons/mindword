@@ -1,71 +1,79 @@
-header.app-header{
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: var(--surface);
+header.app-header {
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   background-color: var(--surface);
 }
 
-header.app-header.blur{
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);    
-}
-
-
-
-li.menu-item > a{
-    text-decoration: none;
-    color: #333333;
-    padding: 1rem 0;    
-    position: relative;
-    white-space: nowrap;
-}
-
-li.menu-item.selected > a{
-    color: #000;
-    font-weight: bold;        
+header.app-header.blur {
+   background-color: rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(20px);
 }
 
 
-li.menu-item.selected > a::after{
-    content: " ";
-    top: 100%;
-    width: 100%;
-    left: 0;
-    height: 2px;
-    position: absolute;
-    background-color: var(--prim);
-    z-index: 3;    
+
+li.menu-item>a {
+   text-decoration: none;
+   color: #333333;
+   padding: 1rem 0;
+   position: relative;
+   white-space: nowrap;
 }
 
-li.menu-item > a::after{
-    content: " ";
-    top: 100%;
-    width: 100%; 
-    left: 0;
-    height: 2px;
-    overflow: hidden;
-    position: absolute;
-    background-color: var(--prim);
-    transition: 1s ease;
-    z-index: 1;
+li.menu-item.selected>a {
+   color: #000;
+   font-weight: bold;
 }
 
 
-li.menu-item > a::before{
-    content: " ";
-    top: 100%;
-    width: 100%;
-    left: 0;
-    height: 2px;
-    position: absolute;
-    background-color: #fff;
-    transition: 1s ease;
-    z-index: 2;
+li.menu-item.selected>a::after {
+   content: " ";
+   top: 100%;
+   width: 100%;
+   left: 0;
+   height: 2px;
+   position: absolute;
+   background-color: var(--prim);
+   z-index: 3;
 }
 
-li.menu-item:hover > a::before{
-    width: 0;     
-    right: 0;
-    left: unset;
+li.menu-item>a::after {
+   content: " ";
+   top: 100%;
+   width: 100%;
+   left: 0;
+   height: 2px;
+   overflow: hidden;
+   position: absolute;
+   background-color: var(--prim);
+   transition: 1s ease;
+   z-index: 1;
 }
 
+
+li.menu-item>a::before {
+   content: " ";
+   top: 100%;
+   width: 100%;
+   left: 0;
+   height: 2px;
+   position: absolute;
+   background-color: #fff;
+   transition: 1s ease;
+   z-index: 2;
+}
+
+li.menu-item:hover>a::before {
+   width: 0;
+   right: 0;
+   left: unset;
+}
+
+
+@media only screen and (max-width: 870px) {
+
+   nav.header-menu {
+      display: none;
+   }
+
+}
