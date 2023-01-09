@@ -24,6 +24,7 @@ TOKEN_SECRET=<secret_token>
 TOKEN_EXPIRE_TIME=<token_expiration_in_milliseconds>
 REFRESH_TOKEN_EXPIRE_TIME=<refresh_token_expiration_in_milliseconds>
 CLIENT_VERSION=<client_version_number>
+GOOGLE_TRANSLATE_AUTH_FILE=<path_to_google_json_auth_file>
 
 REACT_APP_API_URL=<api_url>
 REACT_APP_CLIENT_VERSION=<client_version_number>
