@@ -1,59 +1,70 @@
-li.expr-item-edit{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
-    min-width: 28rem;
-    border-radius: 10px;
-    border: 1px solid #C0C0C0;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
+li.expr-item-edit {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   padding: 1rem;
+   min-width: 28rem;
+   border-radius: 10px;
+   border: 1px solid #C0C0C0;
+   margin-top: 1rem;
+   transition: all 0.3s ease;
 }
 
 
-li.expr-item-edit:last-child::after{
-    position: absolute;
-    content: " ";
-    height: calc(100vh - 120px);
-    width: 2px;
-    background-color: transparent;
+li.expr-item-edit:last-child::after {
+   position: absolute;
+   content: " ";
+   height: calc(100vh - 120px);
+   width: 2px;
+   background-color: transparent;
 
 }
 
-li.expr-item-edit:hover{
-    border: 1px solid #fff;
-    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25);
+li.expr-item-edit:hover {
+   border: 1px solid #fff;
+   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25);
 }
 
 
-div.expr-status{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #c0c0c0;
-    position: absolute;
-    top: 1.25rem;
-    right: 1rem;
-    border-radius: 50%;    
+div.expr-status {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid #c0c0c0;
+   position: absolute;
+   top: 1.25rem;
+   right: 1rem;
+   border-radius: 50%;
 }
 
-div.expr-status > svg {
-    color: #fff;
-}
-
-
-div.expr-status.valid{
-    background-color: #17C3B2;
+div.expr-status>svg {
+   color: #fff;
 }
 
 
-button.btn-lang-help{
-    filter: grayscale(1);
-    transition: filter ease-in 0.15s;
-    margin-right: 0.5rem;
+div.expr-status.valid {
+   background-color: #17C3B2;
 }
 
-button.btn-lang-help:hover{
-    filter: grayscale(0);
+
+button.btn-lang-help {
+   filter: grayscale(1);
+   transition: filter ease-in 0.15s;
+   margin-right: 0.5rem;
+}
+
+button.btn-lang-help:hover {
+   filter: grayscale(0);
+}
+
+
+@media only screen and (max-width: 870px) {
+
+   li.expr-item-edit {
+      min-width: unset;
+   }
+
+
+
 }

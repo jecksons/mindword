@@ -1,8 +1,16 @@
 import { useCallback, useState } from "react";
+import { useDayTask } from "../../../store/day-task-context";
 import { ChangeGoalModal } from './ChangeGoalModal';
 
 
-export function DailyScoreView({ score, onRefreshScore, currDay }) {
+export function DailyScoreView({ currDay }) {
+
+   // score, onRefreshScore, 
+
+   const {
+      dailyScore: score,
+      setDailyScore: onRefreshScore
+   } = useDayTask();
 
    const completedPerc = score.valid_items >= score.goal ? 100 : Math.floor(score.valid_items / score.goal * 100);
    const pendingPerc = score.valid_items >= score.goal ? 0 : (

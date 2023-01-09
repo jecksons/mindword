@@ -46,7 +46,7 @@ class DraftController {
       let values = [
          idUser,
          data.description.substr(0, 200),
-         data.translation_meaning ? data.data.translation_meaning.substr(0, 200) : null, ,
+         data.translation_meaning ? data.translation_meaning.substr(0, 200) : null,
          new Date()
       ];
       sql = SQL_INS_DRAFT;
@@ -106,16 +106,23 @@ class DraftController {
       }
    }
 
+
+
+   static removeNT(idDraft, idUser, conn) {
+      return conn.query(`
+                    delete from draft 
+                    where id_draft = ?
+                    and id_user = ?
+                    `, [idDraft, idUser]);
+   }
+
+
    static async remove(idDraft, idUser, conn) {
       let transStarted = false;
       try {
          await conn.beginTransaction();
          transStarted = true;
-         const rows = await conn.query(`
-                    delete from draft 
-                    where id_draft = ?
-                    and id_user = ?
-                    `, [idDraft, idUser]);
+         const rows = await DraftController.removeNT(idDraft, idUser, conn);
          if (rows.affectedRows > 0) {
             return conn.commit();
          }
@@ -139,7 +146,7 @@ class DraftController {
          return rows.map((itm) => ({
             id: itm.id_draft,
             description: itm.description,
-            translation_meaning: itm.traslation_meaning,
+            translation_meaning: itm.translation_meaning,
             created_at: new Date(itm.created_at)
          }));
       }
@@ -147,12 +154,14 @@ class DraftController {
    }
 
 
-   static async getAll(idUser, conn) {
+   static async getAll(idUser, conn, keepConnection) {
       try {
          const ret = await DraftController.getByFilterNT('', [], idUser, conn);
          return ret;
       } finally {
-         await conn.close();
+         if (!keepConnection) {
+            await conn.close();
+         }
       }
    }
 
